@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        node {label 'agent01'}
+        node {label 'agent007'}
     }
 
     stages {
