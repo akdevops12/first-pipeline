@@ -12,7 +12,10 @@ pipeline {
                 }
             }
             steps {
-                echo 'Building....baby Cam'
+                  any {
+                    image 'yandjoumbi/app:0.0.1'
+                    reuseNode true
+                }
             }
         }
         stage('Test') {
