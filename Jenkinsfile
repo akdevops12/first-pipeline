@@ -5,18 +5,13 @@ pipeline {
 
     stages {
         stage('Build') {
-            agent{
-                any {
-                    image 'yandjoumbi/app:0.0.1'
-                    reuseNode true
-                }
-            }
-            steps {
-                  any {
-                    image 'yandjoumbi/app:0.0.1'
-                    reuseNode true
-                }
-            }
+
+            agent any 
+
+                 steps {
+                  sh 'docker build -t yandjoumbi/app:0.0.1'
+                 }
+
         }
         stage('Test') {
             steps {
