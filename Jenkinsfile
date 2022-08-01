@@ -5,6 +5,12 @@ pipeline {
 
     stages {
         stage('Build') {
+            agent{
+                docker {
+                    image 'yandjoumbi/app:0.0.1'
+                    reuseNode true
+                }
+            }
             steps {
                 echo 'Building....baby Cam'
             }
@@ -16,7 +22,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                echo 'cameron....add ...'
+                echo 'cameron..  ...'
             }
         }
     }
