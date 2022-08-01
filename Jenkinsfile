@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Build') {
             agent{
-                docker {
+                any {
                     image 'yandjoumbi/app:0.0.1'
                     reuseNode true
                 }
