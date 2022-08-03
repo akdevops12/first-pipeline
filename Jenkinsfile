@@ -14,14 +14,12 @@ pipeline{
 		stage('Build') {
 
 			steps {
-				sh 'docker build -t yandjoumbi/nginxsample:0.0.1 .'
+				sh 'docker build -t yandjoumbi/app:0.0.2 .'
+                sh 'docker run -d --name app2 -p 3000:3000 yandjoumbi/app:0.0.2'
 			}
 		}
 
-        stage('Initialize') {
-        def dockerHome = tool 'myDocker'
-        env.PATH = "${dockerHome}/bin:${env.PATH}"
-        }
+ 
 
 		stage('Login') {
 
@@ -33,7 +31,7 @@ pipeline{
 		stage('Push') {
 
 			steps {
-				sh 'docker push yandjoumbi/nginxsample:0.0.1'
+				sh 'docker push yandjoumbi/app2:0.0.2'
 			}
 		}
 	}
