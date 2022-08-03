@@ -1,6 +1,7 @@
 pipeline{
 
-	node {label 'agent01'}
+	
+        agent any
 
 	environment {
 		DOCKERHUB_CREDENTIALS=credentials('docker-hub-yaya')
