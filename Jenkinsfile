@@ -9,10 +9,7 @@ pipeline{
 
 	stages {
 
-        stage('Initialize') {
-        def dockerHome = tool 'myDocker'
-        env.PATH = "${dockerHome}/bin:${env.PATH}"
-        }
+   
 
 		stage('Build') {
 
@@ -20,6 +17,11 @@ pipeline{
 				sh 'docker build -t yandjoumbi/nginxsample:0.0.1 .'
 			}
 		}
+
+        stage('Initialize') {
+        def dockerHome = tool 'myDocker'
+        env.PATH = "${dockerHome}/bin:${env.PATH}"
+        }
 
 		stage('Login') {
 
