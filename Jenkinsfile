@@ -12,7 +12,7 @@ pipeline{
 		stage('Build') {
 
 			steps {
-				sh 'docker build -t yandjoumbi/nginxsample:0.0.2 .'
+				sh 'docker build -t yandjoumbi/nginxsample:0.0.1 .'
 			}
 		}
 
@@ -26,7 +26,7 @@ pipeline{
 		stage('Push') {
 
 			steps {
-				sh 'docker push yandjoumbi/nginxsample:0.0.2'
+				sh 'docker push yandjoumbi/nginxsample:0.0.1'
 			}
 		}
 	}
