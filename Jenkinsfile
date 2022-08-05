@@ -11,7 +11,7 @@ pipeline{
 		stage('Build and Tag') {
 
 			steps {
-				sh 'docker build -t marcel/app:latest .'
+				sh 'docker build -t marcel/app:0.0.1 .'
 			}
 		}
 
@@ -25,7 +25,7 @@ pipeline{
 		stage('Push') {
 
 			steps {
-				sh 'docker push marcel/app:latest'
+				sh 'docker push marcel/app:0.0.1'
 			}
 		}
 	}
