@@ -8,7 +8,7 @@ pipeline{
 
 	stages {
 
-		stage('Build and Tag') {
+		stage('Build') {
 
 			steps {
 				sh 'docker build -t marcel/app:0.0.1 .'
