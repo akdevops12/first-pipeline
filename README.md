@@ -1,5 +1,2 @@
 # first-pipeline
-first change 
-second change
-third change
-correct change
+first change to push to image to dockerhub using jenkins and github
