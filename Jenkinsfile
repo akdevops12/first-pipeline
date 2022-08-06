@@ -11,7 +11,7 @@ pipeline{
 		stage('Build') {
 
 			steps {
-				sh 'docker build -t marcel/app:latest .'
+				sh 'docker build -t 30marcel/app:latest .'
 			}
 		}
 
