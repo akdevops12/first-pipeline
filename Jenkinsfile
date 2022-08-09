@@ -1,11 +1,5 @@
 pipeline {
-    agent { 
-    		node 
-    			{
-				label 'static-agent'
-			}
-	}
-
+    agent any
     stages {
         stage('Build') {
             steps {
