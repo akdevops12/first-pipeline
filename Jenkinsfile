@@ -11,7 +11,7 @@
 		stage('Build') {
 
 			steps {
-				sh 'docker build -t bharathirajatut/nodeapp:latest .'
+				sh 'docker build -t ulrich07/nodeapp:latest .'
 			}
 		}
 
@@ -25,7 +25,7 @@
 		stage('Push') {
 
 			steps {
-				sh 'docker push bharathirajatut/nodeapp:latest'
+				sh 'docker push ulrich07/nodeapp:latest'
 			}
 		}
 	}
