@@ -3,7 +3,7 @@
 	agent any
 
 	environment {
-		DOCKERHUB_CREDENTIALS=credentials('dockerhub-cred-raja')
+		DOCKERHUB_CREDENTIALS=credentials('Docker-hub')
 	}
 
 	stages {
