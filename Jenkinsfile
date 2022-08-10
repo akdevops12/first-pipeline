@@ -4,7 +4,7 @@ pipeline{
         agent any
 
 	environment {
-		DOCKERHUB_CREDENTIALS=credentials('docker-hub-yaya')
+		DOCKERHUB_CREDENTIALS=credentials('dockerhub')
 	}
 
 	stages {
@@ -14,8 +14,7 @@ pipeline{
 		stage('Build') {
 
 			steps {
-				sh 'docker build -t yandjoumbi/app:0.0.2 .'
-                sh 'docker run -d --name app2 -p 3000:3000 yandjoumbi/app:0.0.2'
+				sh 'docker build -t yandjoumbi/yann-dj:0.0.1 .'
 			}
 		}
 
@@ -31,7 +30,7 @@ pipeline{
 		stage('Push') {
 
 			steps {
-				sh 'docker push yandjoumbi/app2:0.0.2'
+				sh 'docker push yandjoumbi/yann-dj:0.0.1'
 			}
 		}
 	}
