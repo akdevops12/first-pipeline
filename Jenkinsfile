@@ -25,7 +25,7 @@
 		stage('Push') {
 
 			steps {
-				sh 'docker push ulrich012/nodeapp:latest'
+				sh 'docker push raul012/nodeapp:latest'
 			}
 		}
 	}
