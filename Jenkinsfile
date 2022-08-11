@@ -1,6 +1,6 @@
  pipeline{
 
-	agent any
+	agent static-agent
 
 	environment {
 		DOCKERHUB_CREDENTIALS=credentials('docker-hub')
