@@ -3,7 +3,7 @@
 	agent any
 
 	environment {
-		DOCKERHUB_CREDENTIALS=credentials('Docker-hub')
+		DOCKERHUB_CREDENTIALS=credentials('docker-hub')
 	}
 
 	stages {
@@ -11,7 +11,7 @@
 		stage('Build') {
 
 			steps {
-				sh 'docker build -t ulrich07/nodeapp:latest .'
+				sh 'docker build -t raul012/nodeapp:latest .'
 			}
 		}
 
@@ -25,7 +25,7 @@
 		stage('Push') {
 
 			steps {
-				sh 'docker push ulrich07/nodeapp:latest'
+				sh 'docker push ulrich012/nodeapp:latest'
 			}
 		}
 	}
