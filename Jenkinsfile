@@ -20,7 +20,7 @@ pipeline{
 
 			steps {
 				sh 'docker build -t yandjoumbi/yann-dj:0.0.1 .'
-				dockerImage = docker.build "yandjoumbi:latest"
+				//dockerImage = docker.build "yandjoumbi:latest"
 			}
 		}
 
