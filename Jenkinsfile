@@ -3,12 +3,12 @@
 	//agent any
 	agent {
 		    node   {
-						label 'static-agent'
+						label 'docker-agent'
 					}
 			}
 
 	environment {
-		DOCKERHUB_CREDENTIALS=credentials('docker-hub')
+		DOCKERHUB_CREDENTIALS=credentials('Docker-hub')
 	}
 
 	stages {
