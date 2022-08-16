@@ -40,6 +40,7 @@ pipeline{
 				//sh 'docker push yandjoumbi/yann-dj:0.0.1'
 				sh 'docker tag yandjoumbi:latest 597647611698.dkr.ecr.us-east-1.amazonaws.com/yandjoumbi:latest'
 				sh 'docker push 597647611698.dkr.ecr.us-east-1.amazonaws.com/yandjoumbi:latest'
+				
 			}
 		}
 	}
