@@ -14,27 +14,25 @@ pipeline{
 
 	stages {
 
-   
+        
+		stage('Login') {
+
+			steps {
+				//sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+				sh 'aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 597647611698.dkr.ecr.us-east-1.amazonaws.com'		    
+			}
+		}
 
 		stage('Build') {
 
 			steps {
 				sh 'docker build -t yandjoumbi/yann-dj:0.0.1 .'
+				sh 'docker build -t yandjoumbi .'
 				//dockerImage = docker.build "yandjoumbi:latest"
 			}
 		}
 
  
-
-		stage('Login') {
-
-			steps {
-				//sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
-				sh 'aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 597647611698.dkr.ecr.us-east-1.amazonaws.com'
-			    
-			}
-
-		}
 
 		stage('Push') {
 
