@@ -1,10 +1,11 @@
 version: "3.7"
 
 services:
-    my-custom-app: 
-      build: ./
-      image: cameron-image
+    web:
+      build: .
+      expose:
+        - 3000
+    node:
+      image: "alpine3.15"
 
-# volumes:
 
-# networks:
