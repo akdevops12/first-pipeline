@@ -1,26 +1,11 @@
 pipeline {
-    agent { 
-    		node 
-    			{
-				label 'static-agent'
-			}
-	}
-
-    stages {
-        stage('Build') {
+        agent none
+        stages {
+          stage("build & SonarQube analysis") {
+	    agent any
             steps {
-                echo 'Building..'
+              withSonarQubeEnv(installationName: 'sq1') {
+                sh 'mvn clean package sonar:sonar'
+              }
             }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
-        }
-    }
-}
+          }
