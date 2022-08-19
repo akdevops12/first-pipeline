@@ -1,16 +1,3 @@
-
-pipeline {
-        agent none
-        stages {
-          stage("build & SonarQube analysis") {
-	    agent any
-            steps {
-              withSonarQubeEnv(installationName: 'sq1') {
-                sh 'mvn clean package sonar:sonar'
-              }
-            }
-          }
-
 pipeline{
 
 	agent any
@@ -50,4 +37,3 @@ pipeline{
 	}
 
 }
->>>>>>> 73eace401d5b701e3c3698b36b47b1ca0af3b8f9
