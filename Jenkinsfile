@@ -2,7 +2,7 @@ pipeline {
     agent { 
     		node 
     			{
-				label 'static-agent'
+				label 'agent01'
 			}
 	}
 
@@ -15,6 +15,11 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
+            }
+        }
+        stage('Clean') {
+            steps {
+                echo 'Cleanning..'
             }
         }
         stage('Deploy') {
